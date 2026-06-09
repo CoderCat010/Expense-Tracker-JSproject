@@ -15,12 +15,14 @@ body{
     color: #2d3436;
 }
 
+
+
 /* parent container */
 .container{
     width: 100%;
     max-width: 1200px;
     background-color: #ffffff;
-    padding: 3rem;
+    padding: 4rem;
     border-radius: 30px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
@@ -40,3 +42,79 @@ h2{
     font-size: 1.25rem;
     font-weight: 500;
 }
+
+
+
+/* balance container */
+.balance-container{
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 50px;
+    background: linear-gradient(135deg, #a8d5ba, #6b8e23);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+}
+
+.balance-container h1{
+    font-size: 3rem;
+    margin: 15px 0;
+}
+
+.balance-history{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.income, .expenses{
+    background-color: white;
+    padding: 25px 0;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.income:hover, .expenses:hover{
+    transform: translateY(-2px);
+}
+
+.income h3{
+    color: #059669;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.expenses h3{
+    color: #dc2626;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.income p, .expenses p{
+    margin-top: 8px;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.income p{
+    color: #059669;
+}
+
+.expenses p{
+    color: #dc2626;
+}
+
+
+
+/* main content */
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+
+
+
