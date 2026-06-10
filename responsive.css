@@ -1,0 +1,35 @@
+@media (max-width: 990px){
+    .main-content{
+        grid-template-columns: 1fr;
+    }
+    #transform-list{
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 400px){
+    .container{
+        padding: 25px;
+    }
+    
+    .balance-history{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .balance-container h1{
+        font-size: 2.5rem;
+    }   
+
+    .income p, .expenses p{
+    font-size: 1.5rem;
+    }
+    
+    .transaction{
+        padding: 14px 16px;
+    }
+
+    h1{
+        font-size: 1.8rem;
+    }
+}
