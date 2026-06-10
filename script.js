@@ -14,3 +14,8 @@ const description_InputBox = document.getElementById('description-inputBox');
 const amount_InputBox = document.getElementById('amount-inputBox');
 
 // add event listenter on transaction form
+transaction_Form.addEventListener('submit', addTransaction);
+
+function addTransaction(event){
+    event.preventDefault();
+}
