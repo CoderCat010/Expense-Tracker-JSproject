@@ -276,3 +276,12 @@ button[type="submit"]{
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
     margin-top: auto;
 }
+
+button[type="submit"]:hover{
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active{
+    transform: translateY(0);
+}
