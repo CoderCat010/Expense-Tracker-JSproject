@@ -49,3 +49,56 @@ function updateTransactionList(){
         transaction_list.appendChild(li_list);
     })
 }
+
+// create eaach one transaction li 
+function createTransactionElement(transaction){
+    // create li 
+    const li = document.createElement('li');
+    li.classList.add("transaction");
+    li.classList.add(
+        transaction.amount > 0 ? "income" : "expense"
+    )
+
+    li.innerHTML = `
+    <span>${transaction.description}</span>
+    <span>
+      ${formatCurrency(transaction.amount)}
+      <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
+    </span>
+    `;
+    return li;
+}
+
+function updateBalanceHistory() {
+  const balance = transactions.reduce(
+    (acc, t) => acc + t.amount, 0
+  );
+
+  const income = transactions
+    .filter((t) => t.amount > 0)
+    .reduce((acc, t) => acc + t.amount, 0);
+
+  const expenses = transactions
+    .filter((t) => t.amount < 0)
+    .reduce((acc, t) => acc + t.amount, 0);
+
+  balance_El.textContent = formatCurrency(balance);
+  income_El.textContent = formatCurrency(income);
+  expenses_El.textContent = formatCurrency(expenses);
+}
+
+function formatCurrency(number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(number);
+}
+
+function removeTransaction(id) {
+  transactions = transactions.filter(
+    (t) => t.id !== id
+  );
+
+  updateTransactionList();
+  updateBalanceHistory();
+}
