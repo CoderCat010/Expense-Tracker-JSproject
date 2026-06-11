@@ -34,3 +34,18 @@ function addTransaction(event){
     // clear form 
     transaction_Form.reset();
 }
+
+// loop each one transction list and update the list
+function updateTransactionList(){
+    // clear the list after submit new description & amount
+    transaction_list.innerHTML = '';
+
+    // create a copy of each one transaction's array item & reverse the item
+    const copyItems = [...transactions].reverse();
+
+    // loop copied version of each one transaction array items 
+    copyItems.forEach((transaction) => {
+        const li_list = createTransactionElement(transaction)
+        transaction_list.appendChild(li_list);
+    })
+}
